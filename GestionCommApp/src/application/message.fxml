@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="944.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MessageController">
+   <children>
+      <Pane id="pane2" minHeight="-Infinity" minWidth="-Infinity" prefHeight="129.0" prefWidth="944.0">
+         <children>
+            <Label id="textpane" layoutX="105.0" layoutY="32.0" prefHeight="47.0" prefWidth="136.0" text="Alertes" />
+         </children>
+      </Pane>
+      <TableView fx:id="tvMessage" layoutX="28.0" layoutY="169.0" prefHeight="200.0" prefWidth="720.0">
+        <columns>
+          <TableColumn fx:id="IDD" prefWidth="57.0" text="Id" />
+          <TableColumn fx:id="Alertt" prefWidth="662.0" text="Alertes" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="venteAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="944.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VenteController">
+   <children>
+      <TableView fx:id="tvvente" layoutX="68.0" layoutY="314.0" onMouseClicked="#handleMouseAction" prefHeight="343.0" prefWidth="852.0">
+        <columns>
+          <TableColumn fx:id="idventecol" prefWidth="70.0" text="idVente" />
+          <TableColumn fx:id="produitcol" prefWidth="121.0" text="Produit" />
+            <TableColumn fx:id="clientcol" prefWidth="131.0" text="Numéro Vente" />
+            <TableColumn fx:id="quantitecol" prefWidth="71.0" text="Quantité" />
+            <TableColumn fx:id="prixdeventecol" prefWidth="100.0" text="Prix de vente" />
+            <TableColumn fx:id="datecol" prefWidth="131.0" text="Date de vente" />
+            <TableColumn fx:id="totalcol" prefWidth="104.0" text="Total" />
+            <TableColumn fx:id="benificecol" prefWidth="90.0" text="Bénifice" />
+        </columns>
+      </TableView>
+      <GridPane hgap="12.0" layoutX="21.0" layoutY="172.0" prefHeight="59.0" prefWidth="534.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="341.0" minWidth="10.0" prefWidth="53.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="341.0" minWidth="10.0" prefWidth="90.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="341.0" minWidth="10.0" prefWidth="85.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="341.0" minWidth="10.0" prefWidth="90.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="341.0" minWidth="10.0" prefWidth="70.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="360.0" minWidth="10.0" prefWidth="119.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="63.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label styleClass="venteLabel" text="ID" />
+            <Label styleClass="venteLabel" text="Produit" GridPane.columnIndex="1" />
+            <Label styleClass="venteLabel" text="Prix de vente" GridPane.columnIndex="3" />
+            <Label prefHeight="29.0" prefWidth="74.0" styleClass="venteLabel" text="Quantite" GridPane.columnIndex="4" />
+            <Label styleClass="venteLabel" text="Numéro de Vente" GridPane.columnIndex="5" />
+            <Label prefHeight="29.0" prefWidth="90.0" styleClass="venteLabel" text="Prix d'achat" GridPane.columnIndex="2" />
+            <TextField fx:id="tfidproduit" onKeyReleased="#handleTextField" GridPane.rowIndex="1" />
+            <TextField fx:id="tfproduit" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tfprixachat" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="tfprixdevente" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="tfquantiteproduit" prefHeight="27.0" prefWidth="67.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <TextField fx:id="tfclient" prefHeight="27.0" prefWidth="82.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Button contentDisplay="CENTER" defaultButton="true" layoutX="573.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="45.0" prefWidth="113.0" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/add_16px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button contentDisplay="CENTER" defaultButton="true" layoutX="696.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleModifierButton" prefHeight="45.0" prefWidth="113.0" text="Modifier" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/add_16px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button contentDisplay="CENTER" defaultButton="true" layoutX="815.0" layoutY="186.0" mnemonicParsing="false" onAction="#deleteVente" prefHeight="45.0" prefWidth="114.0" text="Supprimer" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/add_16px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <DatePicker fx:id="tfventejour" layoutX="162.0" layoutY="270.0" />
+      <Button alignment="CENTER" layoutX="363.0" layoutY="261.0" mnemonicParsing="false" onAction="#venteJour" prefHeight="45.0" prefWidth="101.0" text="Choisir" />
+      <Label layoutX="28.0" layoutY="268.0" text="Vente du jour" />
+      <Pane id="pane2" layoutY="-1.0" prefHeight="150.0" prefWidth="944.0">
+         <children>
+            <Label layoutX="129.0" layoutY="34.0" prefHeight="56.0" prefWidth="140.0" text="Vente">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
